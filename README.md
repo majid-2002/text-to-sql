@@ -7,7 +7,7 @@ It leverages **Google's Gemini AI** for query generation and connects to a **Pos
 
 ---
 
-## **⚙️ Updated Setup Instructions (Including Virtual Environment)**  
+## **⚙️ Setup Instructions**  
 
 ### **1️⃣ Clone the Repository**  
 First, clone the project repository from GitHub:  
