@@ -1,4 +1,3 @@
----
 
 # **Text-to-SQL Agent for Pagila Database**  
 
@@ -94,4 +93,4 @@ Use **cURL** or **Postman** to send requests.
 ## **🚀 Future Enhancements**
 - Add **vector search** for better query understanding  
 - Implement **fine-tuned LLM models** for more accurate SQL generation  
----
+
