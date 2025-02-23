@@ -7,23 +7,37 @@ It leverages **Google's Gemini AI** for query generation and connects to a **Pos
 
 ---
 
-## **📂 Project Structure**  
+## **⚙️ Updated Setup Instructions (Including Virtual Environment)**  
 
-```
-📦 text-to-sql-agent
-├── app.py                 # Flask API for handling user queries
-├── nlp.py                 # Query processing and LLM integration
-├── get_schema_metadata.py  # Extracts schema details from the Pagila database
-├── requirements.txt       # Required dependencies
-├── README.md              # Project documentation
+### **1️⃣ Clone the Repository**  
+First, clone the project repository from GitHub:  
+
+```sh
+git clone https://github.com/majid-2002/text-to-sql.git
+cd text-to-sql
 ```
 
 ---
 
-## **⚙️ Setup Instructions**  
+### **2️⃣ Set Up a Virtual Environment**  
+It's recommended to use a **virtual environment** to manage dependencies.  
 
-### **1️⃣ Install Dependencies**  
-Ensure you have **Python 3.8+** installed. Then, install required packages:  
+#### **For Windows:**
+```sh
+python -m venv venv
+venv\Scripts\activate
+```
+
+#### **For macOS/Linux:**
+```sh
+python3 -m venv venv
+source venv/bin/activate
+```
+
+---
+
+### **3️⃣ Install Dependencies**  
+After activating the virtual environment, install the required dependencies:  
 
 ```sh
 pip install -r requirements.txt
@@ -31,45 +45,47 @@ pip install -r requirements.txt
 
 ---
 
-### **2️⃣ Set Up the Database**  
-Setup the Pagilla database by using docker-compose.  
+### **4️⃣ Set Up the Database**  
+Set up the **Pagila database** using **Docker Compose** and update the database connection details in `database.py`:  
 
 ```python
+import psycopg2
+
 conn = psycopg2.connect(
     dbname="postgres",
-    user="postgres",
-    password="123456",
+    user="postgres",  # username
+    password="123456",  # password
     host="localhost",
     port="5432"
 )
-
-
-```
-### **3️⃣ Set Up the API**
-
-Replace the `REPLACE_YOUR_APIKEY` with your Gemini API key in `nlp.py` file.
-```
-client = genai.Client(api_key="REPLACE_YOUR_APIKEY")
-
 ```
 
 
 ---
 
-### **3️⃣ Run the Flask Server**
-Start the Flask server:  
+### **5️⃣ Set Up the API Key**  
+Replace the placeholder `REPLACE_YOUR_APIKEY` with your **Google Gemini API Key** in `nlp.py`:  
+
+```python
+client = genai.Client(api_key="REPLACE_YOUR_APIKEY")
+```
+
+---
+
+### **6️⃣ Run the Flask Server**  
+Start the Flask server **inside the virtual environment**:  
 
 ```sh
 python app.py
 ```
 
-It will run on `http://127.0.0.1:5000/` by default.
+The API will be available at **`http://127.0.0.1:5000/`**.
 
 ---
 
-### **4️⃣ Send API Requests**  
+### **7️⃣ Send API Requests**  
 
-Use **cURL** or **Postman** to send requests.  
+You can use **cURL** or **Postman** to test the API.
 
 #### **➡️ Sample Request (POST `/query`)**  
 ```json
@@ -88,9 +104,3 @@ Use **cURL** or **Postman** to send requests.
     ]
 }
 ```
-
----
-## **🚀 Future Enhancements**
-- Add **vector search** for better query understanding  
-- Implement **fine-tuned LLM models** for more accurate SQL generation  
-
