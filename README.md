@@ -48,7 +48,7 @@ conn = psycopg2.connect(
 ```
 ### **3️⃣ Set Up the API**
 
-Setup the Pagilla database by using docker-compose.  
+Replace the `REPLACE_YOUR_APIKEY` with your Gemini API key in `nlp.py` file.
 ```
 client = genai.Client(api_key="REPLACE_YOUR_APIKEY")
 
