@@ -95,5 +95,3 @@ Use **cURL** or **Postman** to send requests.
 - Add **vector search** for better query understanding  
 - Implement **fine-tuned LLM models** for more accurate SQL generation  
 ---
-
-Now, your **README** is well-structured and clear for new users to set up and run the project! 🎯 Let me know if you want any modifications. 🚀
