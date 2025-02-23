@@ -43,11 +43,21 @@ conn = psycopg2.connect(
     host="localhost",
     port="5432"
 )
+
+
 ```
+### **3️⃣ Set Up the API**
+
+Setup the Pagilla database by using docker-compose.  
+```
+client = genai.Client(api_key="REPLACE_YOUR_APIKEY")
+
+```
+
 
 ---
 
-### **3️⃣ Run the Flask API**  
+### **3️⃣ Run the Flask Server**
 Start the Flask server:  
 
 ```sh

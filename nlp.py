@@ -2,7 +2,7 @@ from google import genai
 from get_schema_metadata import get_schema_metadata
 
 # GEMINI API Key
-client = genai.Client(api_key="")
+client = genai.Client(api_key="REPLACE_YOUR_APIKEY")
 
 SCHEMA_METADATA = None
 
